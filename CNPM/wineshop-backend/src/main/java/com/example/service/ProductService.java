@@ -29,10 +29,13 @@ public class ProductService {
 
     // Lấy khoảng giá min/max
     public Map<String, Double> getPriceRange() {
-        Object[] result = productRepository.findPriceRange();
+        Object[] result = (Object[]) productRepository.findPriceRange();
+        System.out.println(result[0]);
+        System.out.println(result[1]);
         Map<String, Double> map = new HashMap<>();
         map.put("minPrice", (Double) result[0]);
         map.put("maxPrice", (Double) result[1]);
+        System.out.println(map.get("minPrice"));
         return map;
     }
 }

@@ -21,7 +21,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     // Truy vấn lấy khoảng giá min/max
     @Query("SELECT MIN(p.price), MAX(p.price) FROM Product p")
-    Object[] findPriceRange();
+    Object findPriceRange();
 
     // Truy vấn lấy danh sách thương hiệu
     @Query("SELECT DISTINCT p.brand.name FROM Product p WHERE p.brand IS NOT NULL")

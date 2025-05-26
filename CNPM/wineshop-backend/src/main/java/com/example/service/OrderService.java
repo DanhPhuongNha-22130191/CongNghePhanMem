@@ -5,7 +5,6 @@ import com.example.model.Order;
 import com.example.model.OrderDetail;
 import com.example.model.Product;
 import com.example.repository.OrderRepository;
-import com.example.repository.ProductRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
