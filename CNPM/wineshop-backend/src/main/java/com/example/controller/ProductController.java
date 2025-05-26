@@ -12,7 +12,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/product")
-@CrossOrigin(origins = "congnghephanmem.onrender.com/api/product")
+@CrossOrigin(origins = "https://congnghephanmem.onrender.com",
+        methods = {RequestMethod.GET, RequestMethod.POST},
+        allowedHeaders = {"Content-Type", "Authorization"},
+        maxAge = 3600)
 public class ProductController {
     @Autowired
     private ProductService productService;
