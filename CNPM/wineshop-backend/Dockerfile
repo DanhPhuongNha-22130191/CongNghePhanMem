@@ -1,14 +1,13 @@
-# Base image
-FROM eclipse-temurin:17-jdk-alpine
-
-# Tạo thư mục trong container
+# Step 1: Build stage
+FROM maven:3.8.5-openjdk-17-slim AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy file jar vào container
-COPY target/*.jar app.jar
-
-# Mở port 8080 (hoặc port bạn dùng)
+# Step 2: Run stage
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
-
-# Lệnh chạy Spring Boot
 ENTRYPOINT ["java", "-jar", "app.jar"]
