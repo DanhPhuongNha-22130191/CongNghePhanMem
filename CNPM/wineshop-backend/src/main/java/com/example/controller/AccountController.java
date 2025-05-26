@@ -11,6 +11,10 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("api/auth")
+@CrossOrigin(origins = "https://cnpm-frontend.vercel.app",
+        methods = {RequestMethod.GET, RequestMethod.POST},
+        allowedHeaders = {"Content-Type", "Authorization"},
+        maxAge = 3600)
 public class AccountController {
     @Autowired
     private AccountService accountService;
