@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/product")
+@CrossOrigin(origins = "congnghephanmem.onrender.com/api/product")
 public class ProductController {
     @Autowired
     private ProductService productService;
