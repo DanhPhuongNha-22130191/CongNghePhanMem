@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/product")
-@CrossOrigin(origins = "https://congnghephanmem.onrender.com",
+@CrossOrigin(origins = "https://cnpm-frontend.vercel.app",
         methods = {RequestMethod.GET, RequestMethod.POST},
         allowedHeaders = {"Content-Type", "Authorization"},
         maxAge = 3600)
